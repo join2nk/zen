@@ -1,25 +1,111 @@
 body{
   text-align: center;
-  
+  background-color: #F6F6F6;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.navbar{
+  position: fixed;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color:#6D9886;
+  height: 3.2rem;
+}
+.navbar>span{
+  font-size: 2.2rem;
+  position: relative;
+  background-color: #6D9886;
+  display: inline-block;
+  width: 350px;
+  border-radius: 50%;
+  color: #212121;
+  font-family: 'Fasthand', cursive;
+  font-weight: 200;
+  letter-spacing: 4px;
+}
+.mainbody{
+  margin: 70px 0px;
+  display: inline-block;
+  padding: 50px;
+  border-left: 5px double #6D9886;
+  border-right: 5px double #6D9886;
+  border-radius: 40px;
 }
 textarea{
   width: 420px;
   font-family: monospace;
-  
+  margin-bottom: 50px;
+  height: 150px;
 }
 label{
   display:inline-block;
-  width: 420px;
+  width: 400px;
   margin: 20px auto;
+  text-align: left;
+  padding: 10px 10px 0px 10px;
+  border-top: 2px double #D9CAB3;
+  color: #212121;
+  font-variant: small-caps;
+
 }
 
 h1{
-  background-color: blanchedalmond;
+  background-color:#D9CAB3;
+  color: #212121;
   margin: 0;
   display: inline-block;
   padding: 20px ; 
   width: 400px;
   border-radius: 20px;
+  margin-bottom: 50px;
+  font-family: fasthand,cursive;
+  font-weight: 200;
+  letter-spacing: 4px;
+  display: none;
 
+}
+.btn2{
+  text-align: center;
+  font-size:1.3rem;
+  padding: .6rem;
+  margin-top: 2rem;
+  position:relative;
+  right: 220px;
+  border: 0px;
+  border-radius: 20px;
+  width: 190px;
+  margin-bottom: 2rem;
+  background-color:#D9CAB3;
+  color: #212121;
+  font-variant: small-caps;
+  box-shadow: 1px 1px 3px black;
+  
+}
+.btn{
+  font-size:1.3rem;
+  padding: .6rem;
+  margin-top: 2rem;
+  position:relative;
+  left: 220px;
+  border: 0px;
+  border-radius: 20px;
+  width: 190px;
+  margin-bottom: 2rem;
+  background-color:#6D9886;
+  color: #F6F6F6;
+  font-variant: small-caps;
+  box-shadow: 1px 1px 3px black;
+}
+.btn:hover{
+  background-color:#4e8876;
+  border-radius: 1px solid black;
+  box-shadow: 1px 1px 1px black;
+}
+.btn2:hover{
+  background-color: #ccc2c2 ;
+  border-radius: 1px solid black;
+  box-shadow: 1px 1px 1px black;
 }
