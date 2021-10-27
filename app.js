@@ -14,7 +14,7 @@ app.use(express.static("blog_ejs"));
 //variable posts
 let posts = [];
 
-mongoose.connect(process.env.MONGOWIKI);
+mongoose.connect(process.env.MONGOWIKI).catch((err)=>{console.log(err +"\n\nnot connected");});
 
 const articleSchema = {title:String,content:String};
 const Article = mongoose.model('articles',articleSchema);
@@ -57,7 +57,23 @@ app.post("/compose",async (req,res)=>{
   await post.save();
   res.redirect("/");
 });
-
+app.get("/delpost/:post",(req,res)=>{
+  posts.forEach(post => 
+    {
+      if  (_.lowerCase( post.title) == _.lowerCase(req.params.post))
+      {
+        console.log("match found in del");
+        Article.deleteOne({title:post.title},(err)=>
+        {
+          if(err){
+            console.log(err);
+          }else{
+            res.redirect("/");
+          };
+        })
+      };
+  
+    })})
 
 app.get('/posts/:post',(req,res)=>{
   //a route to all indivisual posts dynamicaly created pages

@@ -4,10 +4,37 @@
   <h1>Home</h1>
   <p> <%= startingContent %> </p>
   
+  <table>
   <% posts.forEach(post =>{ %>
-    <h3><%= post.title %> </h3>
-    <p> <%=post.content.substring(0,100)+ "..." %> <span><a href="/posts/<%=post.title %> " >Read More</a></span></p>
-  <%  })%>
+    <tr>    
+    <td>
 
+          
+          <div style="padding-right: 20px;">
+            
+            <h3><%= post.title %> </h3>
+            <p> <%=post.content.substring(0,250)+ "..." %> <span><a href="/posts/<%=post.title %> " >Read More</a></span>
+            </div></p>
+          </td><td style="width: 20%;">
+            <div >
+              
+            <a href="/posts/<%=post.title %> ">
+              <button class="btn btn-primary">open</button>
+            </a>
+            <!-- <a href="">
+              <button class="btn btn-primary">edit</button>
+            </a> -->
+            <a href="/delpost/<%= post.title %> ">
+              <button class="btn btn-danger" style="margin-left: 25%" onclick=""f>Del</button>
+            </a>
+          </div>
+      </td>
+    </tr>
+      <%  })%>
+    </table>
+<br><br><br>
+<a href="/compose">
 
+  <button class ="btn btn-primary"style="position:relative;left: 80%;">Compose new post</button>
+</a>
 <%- include('partials/footer'); -%>
