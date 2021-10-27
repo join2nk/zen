@@ -5,6 +5,9 @@
 .a{
   margin-bottom: 100px;
 }
+.block{
+  display: block;
+}
 .navbar{
   padding: 15px 0;
   border: 0;

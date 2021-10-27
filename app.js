@@ -50,13 +50,12 @@ app.get("/compose",(req,res)=>{
 
 app.post("/compose",async (req,res)=>{
   console.log(req.body);
-  const post = new Article ({
-    title:req.body.postTitle,
-    content:req.body.postBody
-  });
+  let [title,content]= [req.body.postTitle,req.body.postBody]
+  const post = new Article ({title,content});
   await post.save();
   res.redirect("/");
 });
+
 app.get("/delpost/:post",(req,res)=>{
   posts.forEach(post => 
     {
